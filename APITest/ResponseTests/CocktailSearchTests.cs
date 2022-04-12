@@ -23,7 +23,6 @@ namespace CocktailAPIResponseTest
 
 
             var responseBody = response.Result.Content.ReadAsStringAsync().Result;
-            var cocktailFromSiteSchema = JSchema.Parse(responseBody);
 
             JObject cocktail = JObject.Parse(responseBody);
             if (cocktail.Count != 1)
@@ -41,7 +40,6 @@ namespace CocktailAPIResponseTest
 
 
             var responseBody = response.Result.Content.ReadAsStringAsync().Result;
-            var cocktailFromSiteSchema = JSchema.Parse(responseBody);
 
             JObject cocktails = JObject.Parse(responseBody);
             foreach(var cocktailSearchResult in cocktails["drinks"].Children())
