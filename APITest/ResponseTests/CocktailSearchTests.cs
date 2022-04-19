@@ -42,10 +42,9 @@ namespace CocktailAPIResponseTest
             var responseBody = response.Result.Content.ReadAsStringAsync().Result;
 
             JObject cocktails = JObject.Parse(responseBody);
-            foreach(var cocktailSearchResult in cocktails["drinks"].Children())
-            {
-                Assert.IsTrue(cocktailSearchResult.IsValid(cocktailSchema));
-            }
+
+            Assert.IsTrue(cocktailSearchResult.IsValid(cocktailSchema));
+
             
         }
 
