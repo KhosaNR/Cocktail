@@ -43,7 +43,7 @@ namespace CocktailAPIResponseTest
 
             JObject cocktails = JObject.Parse(responseBody);
 
-            Assert.IsTrue(cocktailSearchResult.IsValid(cocktailSchema));
+            Assert.IsTrue(cocktails.IsValid(cocktailSchema));
 
             
         }
